@@ -14,7 +14,9 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(cors({origin:'*'}));
 
-
+// Initialize Google Generative AI
+const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
 // Chat endpoint
 app.post('/api/chat', async (req, res) => {
@@ -66,9 +68,7 @@ const textToSpeech = (text) => {
 // Serve the audio file
 app.use(express.static('.')); // Serve files in the root directory
 
-// Initialize Google Generative AI
-const genAI = new GoogleGenerativeAI(process.env.API_KEY);
-const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+
 
 // Health Check Endpoint
 app.get("/", (req, res) => {
