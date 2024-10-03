@@ -43,6 +43,7 @@ app.post('/api/chat', async (req, res) => {
         res.status(500).send({
            error: 'Error occurred while processing the request',
            details: error.message,
+           stack: error.stack,
         });
     }
 });
