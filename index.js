@@ -8,7 +8,7 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(bodyParser.json());
@@ -40,7 +40,10 @@ app.post('/api/chat', async (req, res) => {
 
     } catch (error) {
         console.error("Error processing request:", error);
-        res.status(500).send('Error occurred while processing the request');
+        res.status(500).send({
+           error: 'Error occurred while processing the request',
+           details: error.message,
+        });
     }
 });
 
