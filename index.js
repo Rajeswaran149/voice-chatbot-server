@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
-const gTTS = require('gtts'); // Correct import
+const gTTS = require('gtts'); 
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
