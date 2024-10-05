@@ -19,9 +19,12 @@
     "@google/generative-ai": "^0.21.0",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
+    "deepspeech": "^0.9.3",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "gtts": "^0.2.1",
-    "nodemon": "^3.1.7"
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.7",
+    "wav": "^1.0.2"
   }
 }
