@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors({origin:["https://voice-chatbot-server.vercel.app"]}));
+app.use(cors({origin:"*"}));
 
 // Initialize Google Generative AI
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
